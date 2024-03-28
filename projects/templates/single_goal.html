@@ -12,5 +12,12 @@
         </div>
         <h2>Description</h2>
         <p>{{ goal.reason}}</p>
+        <h2>Notes</h2>
+        {% for note in notes %}
+            <div class="row">
+                <p>{{ note.id }}</p>
+                <p>{{ note.text }}</p>
+            </div>
+        {% endfor %}
     </div>
 {% endblock %}

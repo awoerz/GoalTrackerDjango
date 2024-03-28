@@ -3,9 +3,7 @@ from .models import Note, Goal
 
 # Create your views here.
 def home(request):
-    notes = Note.objects.all()
-    goals = Goal.objects.all()
-    return render(request, "home.html", {"notes": notes, "goals": goals}) 
+    return render(request, "home.html") 
 
 def goals(request):
     goals = Goal.objects.all()
@@ -13,4 +11,5 @@ def goals(request):
 
 def single_goal(request, id):
     goal = Goal.objects.get(id=id)
-    return render(request, "single_goal.html", {"goal": goal})
+    notes = Note.objects.select_related().filter(goal=id)
+    return render(request, "single_goal.html", {"goal": goal, "notes": notes})
