@@ -1,0 +1,27 @@
+{% extends "layout.html" %} 
+{% block title %}Home{% endblock title %}
+{% block content %}
+    <div class="container" data-bs-theme="dark">
+        <h1 class="text-light">Goals</h1>
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Goal</th>
+                    <th scope="col">Reason</th>
+                    <th scope="col">Percentage Complete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for goal in goals %}
+                    <tr>
+                        <th><a href="/goals/{{goal.id}}">{{ goal.id }}</a></th>
+                        <td>{{ goal.name }}</td>
+                        <td>{{ goal.reason }}</td>
+                        <td>{{ goal.completion_percentage }} %</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

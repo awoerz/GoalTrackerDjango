@@ -1,0 +1,14 @@
+{% extends "layout.html" %} 
+{% block title %}Home{% endblock title %}
+{% block content %}
+    <div class="container text-light" data-bs-theme="dark">
+        <h1>What is this application?</h1>
+        <p>This application is a learning project that will also help me in tracking learning new things and accomplishing goals. The idea is that this becomes a super powered to-do list :)</p>
+        <div class="card border-primary bg-dark col-3 text-center">
+            <div class="card-body">
+                <p>Go to my goals here:</p>
+                <a class="btn btn-primary" href="/goals" role="button">Goals</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
